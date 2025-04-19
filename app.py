@@ -64,7 +64,14 @@ marital_status = st.selectbox("Marital Status", ["Married", "Single", "Divorced"
 overtime = st.selectbox("OverTime", ["Yes", "No"])
 income = st.number_input("Monthly Income", 1000, 20000, 5000)
 job_level = st.selectbox("Job Level", [1, 2, 3, 4, 5])
-job_satisfaction = st.selectbox("Job Satisfaction", [1, 2, 3, 4])
+job_satisfaction_dict = {
+    "Low": 1,
+    "Medium": 2,
+    "High": 3,
+    "Very High": 4
+}
+job_satisfaction_label = st.selectbox("Job Satisfaction", list(job_satisfaction_dict.keys()))
+job_satisfaction = job_satisfaction_dict[job_satisfaction_label]
 business_travel = st.selectbox("Business Travel", ["Travel_Rarely", "Travel_Frequently", "Non-Travel"])
 department = st.selectbox("Department", ["Sales", "Research & Development", "Human Resources"])
 education_field = st.selectbox("Education Field", ["Life Sciences", "Medical", "Marketing", "Technical Degree", "Other", "Human Resources"])
